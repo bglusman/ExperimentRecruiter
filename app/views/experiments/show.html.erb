@@ -1,20 +1,22 @@
-<p id="notice"><%= notice %></p>
+<h1>Experiment</h1>
 
 <p>
-  <b>Title:</b>
+  <b>Title</b><br>
   <%= @experiment.title %>
 </p>
 
 <p>
-  <b>Location:</b>
+  <b>Location</b><br>
   <%= @experiment.location %>
 </p>
 
 <p>
-  <b>Time:</b>
+  <b>Time</b><br>
   <%= @experiment.time %>
 </p>
 
-
-<%= link_to 'Edit', edit_experiment_path(@experiment) %> |
-<%= link_to 'Back', experiments_path %>
+<div class="form-actions">
+  <%= link_to 'Back', experiments_path, :class => 'btn'  %>
+  <%= link_to 'Edit', edit_experiment_path(@experiment), :class => 'btn' %>
+  <%= link_to 'Delete', experiment_path(@experiment), :method => 'delete', :confirm => 'Are you sure?', :class => 'btn btn-danger' %>
+</div>
