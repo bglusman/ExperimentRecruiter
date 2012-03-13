@@ -2,7 +2,11 @@ Recruiter::Application.routes.draw do
   devise_for :users
 
 
-  root :to => "experiments#index"
+  authenticate :user do
+    root :to => "experiments#index"
+  end
+
+  root :to => "devise/sessions#new"
   resources :experiments
 
   # The priority is based upon order of creation:

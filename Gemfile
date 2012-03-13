@@ -5,8 +5,10 @@ gem 'rails', '3.2.2'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
+gem 'pg' 
+gem 'surus'
 gem 'devise'
+gem "less-rails-bootstrap"
 gem 'twitter-bootstrap-rails'
 gem "less-rails-bootstrap-devise", :git => 'git://github.com/bigbento/less-rails-bootstrap-devise.git'
 
