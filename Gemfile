@@ -8,6 +8,7 @@ gem 'rails', '3.2.2'
 gem 'pg'
 gem 'mini_record'
 gem 'simple_form'
+gem 'nested_form', :git => 'https://github.com/ryanb/nested_form.git'
 gem 'devise'
 gem "less-rails-bootstrap"
 gem 'twitter-bootstrap-rails'

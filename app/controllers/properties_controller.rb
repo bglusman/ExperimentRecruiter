@@ -25,6 +25,8 @@ class PropertiesController < ApplicationController
   # GET /properties/new.json
   def new
     @property = Property.new
+    @property.choices.build
+    @property.choices.first.save
 
     respond_to do |format|
       format.html # new.html.erb

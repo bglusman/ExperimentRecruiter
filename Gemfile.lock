@@ -5,6 +5,12 @@ GIT
     less-rails-bootstrap-devise (2.0.0)
       less-rails-bootstrap
 
+GIT
+  remote: https://github.com/ryanb/nested_form.git
+  revision: 486e0f0e93f3ca455d5d0fc7869053257b6afce2
+  specs:
+    nested_form (0.2.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -147,6 +153,7 @@ DEPENDENCIES
   less-rails-bootstrap
   less-rails-bootstrap-devise!
   mini_record
+  nested_form!
   pg
   rails (= 3.2.2)
   sass-rails (~> 3.2.3)
