@@ -1,4 +1,8 @@
 Recruiter::Application.routes.draw do
+  resources :profiles
+
+  resources :properties
+
   devise_for :users
 
 

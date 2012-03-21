@@ -14,26 +14,11 @@
 ActiveRecord::Schema.define(:version => 20120313234229) do
 
   create_table "experiments", :force => true do |t|
-    t.string "name"
-  end
-
-  create_table "profiles", :force => true do |t|
-    t.string "age"
-    t.string "major"
-    t.string "name"
-    t.string "email"
-    t.string "school_id"
-    t.string "notes"
-    t.string "status"
-    t.string "mobile"
-    t.string "sex"
-  end
-
-  create_table "properties", :force => true do |t|
-    t.string  "name"
-    t.string  "text"
-    t.boolean "multiple_choice"
-    t.string  "response"
+    t.string   "title"
+    t.string   "location"
+    t.datetime "time"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "users", :force => true do |t|
@@ -47,6 +32,8 @@ ActiveRecord::Schema.define(:version => 20120313234229) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
+    t.datetime "created_at",                             :null => false
+    t.datetime "updated_at",                             :null => false
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
