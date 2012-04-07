@@ -8,6 +8,9 @@ class Profile < ActiveRecord::Base
   field :status
   field :mobile
   field :sex
-  belongs_to :user
+  belongs_to :subject
+  has_many :responses
+  has_many :experiment_participants
+  has_many :experiments, :through => :experiment_participants
 end
 Profile.auto_upgrade!

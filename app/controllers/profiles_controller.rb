@@ -2,12 +2,11 @@ class ProfilesController < ApplicationController
   # GET /profiles
   # GET /profiles.json
   def index
-    @profiles = Profile.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @profiles }
+    unless current_subject.profile
+      current_subject.profiles.build
+      current_subject.profile.save
     end
+    redirect_to edit_profile_path(current_subject.profile)
   end
 
   # GET /profiles/1
@@ -34,7 +33,10 @@ class ProfilesController < ApplicationController
 
   # GET /profiles/1/edit
   def edit
-    @profile = Profile.find(params[:id])
+    @profile    = Profile.find(params[:id])
+    @responses  = Response.where(:profile_id => current_subject.profile.id)
+    @properties = Property.all
+    @choices    = Choice.all
   end
 
   # POST /profiles

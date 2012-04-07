@@ -3,11 +3,13 @@ Recruiter::Application.routes.draw do
 
   resources :properties
 
-  devise_for :users
+  devise_for :subjects
 
 
-  authenticate :user do
-    root :to => "experiments#index"
+
+
+  authenticate :subject do
+    root :to => "profiles#index"
   end
 
   root :to => "devise/sessions#new"
