@@ -5,6 +5,10 @@ Recruiter::Application.routes.draw do
 
   devise_for :subjects
 
+  resources :events
+
+  get "calendar/index"
+  get "calendar", :to => "calendar#index"
 
 
 
