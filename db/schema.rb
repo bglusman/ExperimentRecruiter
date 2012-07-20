@@ -18,9 +18,9 @@ ActiveRecord::Schema.define(:version => 20120313234229) do
   end
 
   create_table "profiles", :force => true do |t|
+    t.string "name"
     t.string "age"
     t.string "major"
-    t.string "name"
     t.string "email"
     t.string "school_id"
     t.string "notes"
@@ -31,13 +31,48 @@ ActiveRecord::Schema.define(:version => 20120313234229) do
 
   create_table "properties", :force => true do |t|
     t.string  "name"
+    t.string  "age"
+    t.string  "major"
+    t.string  "email"
+    t.string  "school_id"
+    t.string  "notes"
+    t.string  "status"
+    t.string  "mobile"
+    t.string  "sex"
     t.string  "text"
     t.boolean "multiple_choice"
     t.string  "response"
   end
 
-  create_table "users", :force => true do |t|
+  create_table "subjects", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
+    t.string   "encrypted_password",     :default => "", :null => false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          :default => 0
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
+  end
+
+  add_index "subjects", ["email"], :name => "index_subjects_on_email"
+  add_index "subjects", ["reset_password_token"], :name => "index_subjects_on_reset_password_token"
+
+  create_table "users", :force => true do |t|
+    t.string   "name"
+    t.string   "age"
+    t.string   "major"
+    t.string   "email",                  :default => "", :null => false
+    t.string   "school_id"
+    t.string   "notes"
+    t.string   "status"
+    t.string   "mobile"
+    t.string   "sex"
+    t.string   "text"
+    t.boolean  "multiple_choice"
+    t.string   "response"
     t.string   "encrypted_password",     :default => "", :null => false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
