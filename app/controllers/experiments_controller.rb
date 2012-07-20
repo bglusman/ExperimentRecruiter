@@ -25,6 +25,7 @@ class ExperimentsController < ApplicationController
   # GET /experiments/new.json
   def new
     @experiment = Experiment.new
+    @experiment.events.build
 
     respond_to do |format|
       format.html # new.html.erb

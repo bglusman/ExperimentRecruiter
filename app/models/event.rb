@@ -5,10 +5,13 @@ class Event < ActiveRecord::Base
 
   field :title
   field :description
-  field :all_day,   :type => :boolean
-  field :starts_at, :type => :datetime
-  field :ends_at,   :type => :datetime
-  field :created_at,:type => :datetime
+  field :experiment_id, :type => :integer
+  field :all_day,       :type => :boolean
+  field :starts_at,     :type => :datetime
+  field :ends_at,       :type => :datetime
+  field :created_at,    :type => :datetime
+
+  belongs_to :experiment #should this be polymorphic so other things can have events?
 
   # need to override the json view to return what full_calendar is expecting.
   # http://arshaw.com/fullcalendar/docs/event_data/Event_Object/

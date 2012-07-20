@@ -25,7 +25,8 @@ class Subject < ActiveRecord::Base
   field :last_sign_in_ip,                                                          :type => :string
 
   has_many :profiles
-  has_many :experiments, :through => :profiles
+  has_many :recruitments, :through => :profiles
+  has_many :experiments, :through => :recruitments
 
   def profile
     profiles.last

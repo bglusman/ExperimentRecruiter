@@ -24,16 +24,9 @@
     </div>
 
     <div class="control-group">
-      <%= f.label :starts_at, :class => 'control-label' %>
+      <%= f.label :target_participants, :class => 'control-label' %>
       <div class="controls">
-        <%= f.datetime_select :starts_at, :class => 'datetime_select' %>
-      </div>
-    </div>
-
-    <div class="control-group">
-      <%= f.label :ends_at, :class => 'control-label' %>
-      <div class="controls">
-        <%= f.datetime_select :ends_at, :class => 'datetime_select' %>
+        <%= f.text_field :target_participants, :class => 'text_field' %>
       </div>
     </div>
 

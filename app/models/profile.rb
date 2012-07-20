@@ -11,6 +11,7 @@ class Profile < ActiveRecord::Base
   belongs_to :subject
   has_many :responses
   has_many :experiment_participants
-  has_many :experiments, :through => :experiment_participants
+  has_many :recruitments, :through => :experiment_participants
+  has_many :experiments, :through => :recruitments
 end
 Profile.auto_upgrade!
