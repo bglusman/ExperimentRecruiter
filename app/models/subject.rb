@@ -24,13 +24,8 @@ class Subject < ActiveRecord::Base
   field :current_sign_in_ip,                                                       :type => :string
   field :last_sign_in_ip,                                                          :type => :string
 
-  has_many :profiles
   has_many :recruitments, :through => :profiles
-  has_many :experiments, :through => :recruitments
-
-  def profile
-    profiles.last
-  end
+  has_many :experiments,  :through => :recruitments
 
 end
 Subject.auto_upgrade!

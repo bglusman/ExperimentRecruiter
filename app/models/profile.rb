@@ -8,10 +8,13 @@ class Profile < ActiveRecord::Base
   field :status
   field :mobile
   field :sex
+  field :updated_at, :type => :datetime
+  field :created_at, :type => :datetime
   belongs_to :subject
   has_many :responses
   has_many :experiment_participants
   has_many :recruitments, :through => :experiment_participants
   has_many :experiments, :through => :recruitments
+  has_paper_trail
 end
 Profile.auto_upgrade!
