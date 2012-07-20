@@ -7,6 +7,8 @@ Recruiter::Application.routes.draw do
 
   resources :events
 
+  resources :recruitments
+
   get "calendar/index"
   get "calendar", :to => "calendar#index"
 

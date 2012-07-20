@@ -1,0 +1,25 @@
+<%= simple_form_for(@recruitment) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+  </div>
+
+  <div class="control-group">
+    <div class="controls">
+      <%= f.input :allow_repeat_subjects %>
+    </div>
+    <div class="controls">
+      <%= f.input :minimum_participants %>
+    </div>
+    <div class="controls">
+      <%= f.input :maximum_participants %>
+    </div>
+    <div class="controls">
+      <%= f.input :number_to_email %>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

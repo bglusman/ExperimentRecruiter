@@ -1,4 +1,4 @@
-class ExperimentParticipant < ActiveRecord::Base
+class ExperimentInvitation < ActiveRecord::Base
   field :recruitment_id
   field :profile_id
 
@@ -6,4 +6,4 @@ class ExperimentParticipant < ActiveRecord::Base
   belongs_to :profile
   has_one :subject, :through => :profile
 end
-ExperimentParticipant.auto_upgrade!
+ExperimentInvitation.auto_upgrade!
